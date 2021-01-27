@@ -1,0 +1,164 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("139118.jpg");/*backgroung image*/
+    background-position: center;
+    background-size: cover;
+
+    
+}
+
+  /* main-navigation bar*/
+
+.bridge-yoga1{
+    
+    padding-top: 0;
+} 
+/*parameter for main navigation area*/
+.main-navigation ul
+{
+   display:grid;
+   grid-gap:20px;
+   padding:0;
+   list-style:none;
+   grid-template-columns:repeat(4,1fr);
+}
+
+.main-navigation a
+{
+   display:block;
+   text-decoration:none;s
+   padding:0.8rem;
+   text-align:center;
+   color:#75E6DA;/*colors of the main navigation bar list items*/
+   font-size:1rem;
+   border:5px solid transparent;
+   border-radius:4px;
+   box-shadow:0 1px 5px rgba(104, 104, 104, 0.9);
+}
+
+.main-navigation a:hover
+{
+   background:#75E6DA;/*hover colors of the main navigation bar tabs*/
+   color:black;/*hover colors of the main navigation bar list items*/
+}
+
+/*parameters for side bar*/
+.sidebar {
+   height: 100%;
+   width: 0;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: #05445E;/*side bar's background color*/
+   overflow-x: hidden;
+   transition: 0.5s;
+   padding-top: 60px;
+   opacity: 0.85;
+ }
+ 
+ .sidebar a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #D4F1F4;/*colors of the side bar list items*/
+   display: block;
+   transition: 0.3s;
+ }
+ 
+ .sidebar a:hover {
+   color: #75E6DA;/*hover colors of the side bar list items*/
+ }
+ 
+ .sidebar .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+ }
+ 
+ .openbtn {
+   font-size: 20px;
+   cursor: pointer;
+   background-color: #75E6DA;/*button's backgroung color*/
+   color: white;/*text color*/
+   padding: 10px 15px;
+   border: none;
+ }
+ 
+ .openbtn:hover {
+   background-color: #05445E;/*button's hover backgroung color*/
+ }
+ 
+#main {
+   transition: margin-left .5s;
+   padding: 16px;
+ }
+
+ /*body content*/
+ /*parameters to tm and video area*/
+ .tm1, .video{
+     float: left;
+     width: 50%;
+ }
+ .tm1
+ {
+     background-color:#05445E;/*tm background color*/
+     color:#75E6DA ;/*tm text color*/
+     opacity:0.8;
+     text-align: center;
+ }
+ 
+ .video
+ {
+     background-color:#D4F1F4;/*video div backgroung color*/
+     text-align: center;
+     opacity: 0.9;
+ }
+ /*parameters for youtube API*/
+ .button {
+  border-radius: 4px;
+  background-color: #75E6DA;/*youtube API button's background color*/
+  border: none;
+  color: #FFFFFF;/*youtube API button's text color*/
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button:hover{
+  background-color:#05445E;/*youtube API button's hover background color*/
+  color: white;/*youtube API button's hover text color*/
+}
+/*parameters for details button*/
+ .description1 a
+{
+    vertical-align: middle;
+	text-decoration:none;
+    padding:0.8rem;
+    background-color: #75E6DA;/*description button's background color*/
+    color: #05445E;/*description button's text color*/
+	text-align:center;
+	font-size:2rem;
+	border:5px solid transparent;
+	border-radius:20px;
+    opacity:0.8;
+    align-self: center;
+}
+
+.description1 a:hover
+{
+   background:#D4F1F4;
+   color:#05445E;
+}
+.description1{
+   width: 100%;
+   float: left;
+   
+   opacity: 0.8;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style2.css">
+<title>bridge-yoga</title>
+</head>
+<body>
+
+<div class="bridge-yoga1">
+<nav class="main-navigation">
+<ul><!--add the links to #-->
+	<li><a href="index.html">HOME</a></li>
+	<li><a href="#">ABOUT</a></li>
+	<li><a href="#">SEVICES</a></li>
+	<li><a href="#">CONTACT</a></li>
+</ul>
+</nav>
+
+<div class="body">
+<div class="sidebar">
+	<ul><!--add the links to #-->
+	<li><a href="bridge.html">Bridge pose</a></li>
+	<li><a href="cobbler.html">Cobbler pose</a></li>
+	<li><a href="locust.html">Locust pose</a></li>
+	<li><a href="mountain.html">Mountain pose</a></li>
+	<li><a href="tree.html">Tree pose</a></li>
+</ul>
+</div>
+<div class="tm1"> <h1>Bridge Pose</h1> <!--add teachable mechine content here-->
+<div><h2>Teachable Machine Pose Model</h2></div>
+<button type="button" onclick="init()">Start</button>
+<div><canvas id="canvas"></canvas></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/2nJlenSwV/";
+    let model, webcam, ctx, labelContainer, maxPredictions;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // Note: the pose library adds a tmPose object to your window (window.tmPose)
+        model = await tmPose.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const size = 300;
+        const flip = true; // whether to flip the webcam
+        webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append/get elements to the DOM
+        const canvas = document.getElementById("canvas");
+        canvas.width = size; canvas.height = size;
+        ctx = canvas.getContext("2d");
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop(timestamp) {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    async function predict() {
+        // Prediction #1: run input through posenet
+        // estimatePose can take in an image, video or canvas html element
+        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+        // Prediction 2: run input through teachable machine classification model
+        const prediction = await model.predict(posenetOutput);
+
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+
+        // finally draw the poses
+        drawPose(pose);
+    }
+
+    function drawPose(pose) {
+        if (webcam.canvas) {
+            ctx.drawImage(webcam.canvas, 0, 0);
+            // draw the keypoints and skeleton
+            if (pose) {
+                const minPartConfidence = 0.5;
+                tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+                tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+            }
+        }
+    }
+</script>
+</div>
+<div class="video1"><h1>Video</h1> <iframe width="315" height="315" src="https://www.youtube.com/embed/NnbvPeAIhmA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="description"><b><h1>Note</h1></b>
+		<hr>
+		<h2><b>Bridge Pose in Yoga<b></h2>
+<p>Bridge Pose — Setu Bandha Sarvangasana (SAY-too BAHN-duh shar-vahn-GAHS-uh-nuh) — is a beginning backbend that helps to open the chest and stretch the thighs.
+When you’re in the pose, your arms and legs create a “locked bridge” with your body. This pose can be used as preparation for deeper backbends, or practiced with a block as a restorative pose.</p>
+<br>
+<h2>Benefits of Bridge Pose</h2>
+<p>Bridge Pose opens the chest, heart, and shoulders. It stretches the spine, the back of the neck, the thighs, and the hip flexors (front hip joints). Because your heart is higher than your head in this pose, it is considered a mild inversion (less strenuous than other inversions, such as Headstand) and holds all the benefits of inversions: Relief from stress, fatigue, anxiety, headaches, insomnia, and mild depression.
+Bridge Pose also calms the mind and is known to be therapeutic for individuals with high blood pressure. Because it opens the chest, it increases lung capacity, which is therapeutic for those with asthma.
+Bridge Pose also stimulates the abdominal organs and thyroid glands, which improves digestion and helps to regulate metabolism. Because it revitalizes the legs and stretches the shoulders, it can be a particularly rejuvenating pose for those who spend the day sitting in front of a computer or driving. It is also a preparatory pose for Shoulderstand (Salamba Sarvangasana) and Upward Bow Pose (Urdhva Dhanurasana).
+</p>
+<br>
+<h2>Cautions</h2>
+<p>
+Do not perform this pose if you have a neck or shoulder injury. Always work within your own range of limits and abilities. If you have any medical concerns, talk with your doctor before practicing yoga.
+</p>
+<br>
+<h2>Instructions</h2>
+<p>
+Lie on your back with your knees bent and feet on the floor.
+<br>Extend your arms along the floor, palms flat.
+<br>Press your feet and arms firmly into the floor. Exhale as you lift your hips toward the ceiling.
+<br>Draw your tailbone toward your pubic bone, holding your buttocks off the floor. Do not squeeze your glutes or flex your buttocks.
+<br>Roll your shoulders back and underneath your body. Clasp your hands and extend your arms along the floor beneath your pelvis. Straighten your arms as much as possible, pressing your forearms into the mat. Reach your knuckles toward your heels.
+<br>Keep your thighs and feet parallel — do not roll to the outer edges of your feet or let your knees drop together. Press your weight evenly across all four corners of both feet. Lengthen your tailbone toward the backs of your knees.
+<br>Hold for up to one minute. To release, unclasp your hands and place them palms-down alongside your body. Exhale as you slowly roll your spine along the floor, vertebra by vertebra. Allow your knees to drop together.
+</p>
+</div><!--add benifits here-->
+</div>
+
+</body>
+</html>
