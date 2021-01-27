@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hatha-yoga</title>
+    <link rel="stylesheet" href="style4.css"><!--style4 css file linked in here-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<div class="main-div">
+        <div class="hatha-yoga">
+            <nav class="main-navigation">
+            <ul><!--add the links to #--><!--main navigation list items here,and the links-->
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SEVICES</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            </nav>
+        </div>
+
+
+<div id="mySidebar" class="sidebar"><!--items in the side bar,list items and the links-->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="bridge2.html">Bridge pose</a>
+                <a href="cobbler.html">Cobbler pose</a>
+                <a href="locust.html">Locust pose</a>
+                <a href="mountain.html">Mountain pose</a>
+                <a href="tree.html">Tree pose</a>
+              </div>
+
+<div id="main">
+                <button class="openbtn" onclick="openNav()">☰ Open pose menu</button>
+            </div>
+                <!--javascript part for side bar-->
+                <script>
+                    function openNav() {
+                      document.getElementById("mySidebar").style.width = "250px";
+                      document.getElementById("main").style.marginLeft = "250px";
+                    }
+                    
+                    function closeNav() {
+                      document.getElementById("mySidebar").style.width = "0";
+                      document.getElementById("main").style.marginLeft= "0";
+                    }
+                    </script>
+
+<div class="tm1"> <h1>Teachable machine</h1>
+<h2>Click and try each pose</h2></div><!--add teachable mechine content here-->
+
+<div class="video" id ="video"><!--this is the div that youtube api send data-->
+                    <h1>Video</h1>
+                    <button class="button" onclick="bridgepose('Hatha yoga pose',4)">Hatha pose</button><!--change the pose name which under '', according to pose of the current page,number is the maxresult give by API,you can change the number of results according to your choice-->
+                </div>
+                
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--this jquery for help youtube API-->
+<script src="animation1.js"></script><!--javascript file linked in here which helps to work you tube API-->
+</html>

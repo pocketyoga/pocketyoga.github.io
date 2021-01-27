@@ -1,0 +1,316 @@
+/* css variables */
+:root
+{
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+html
+{
+	box-sizing:border-box;
+	font-family:arial,helveticia,sans-serif;
+	color:var(--dark);
+}
+body
+{
+	background:linear-gradient(to left,#ff544e,#ffc400);
+	line-height: 1.4;
+}
+.btn
+{
+	text-decoration:none;
+	padding:0.6rem 1.3rem;
+	border:0;
+	color:white;
+	background:lightblue;
+	position:center;
+	border-radius:20px;
+	width:100px;
+	height:20px;
+}
+
+.wrapper
+{
+	display:grid;
+	grid-gap:10px;
+}
+
+.main-navigation ul
+{
+	display:grid;
+	grid-gap:20px;
+	padding:0;
+	list-style:none;
+	grid-template-columns:repeat(4,1fr);
+}
+
+.main-navigation a
+{
+	display:block;
+	text-decoration:none;
+	padding:0.8rem;
+	text-align:center;
+	color:white;
+	font-size:1rem;
+	border:5px solid transparent;
+	border-radius:20px;
+	box-shadow:var(--shadow);
+}
+
+.main-navigation a:hover
+{
+	background:white;
+	color:black;
+}
+
+.top-container
+{
+	
+	min-height:400px;
+	background:url(introduction-to-yoga.jpg);
+	background-size:cover;
+	background-position:center;
+	padding:3rem;
+	display:flex;
+	justify-content:center;
+	box-shadow:var(--shadow);
+}
+
+.top-container h1
+{
+	font-size:3rem;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.top-container p{
+	font-size:15.5px;
+	margin-top:0;
+}
+
+/*next area*/
+
+.yoga-types
+{
+	text-align:center;
+	background:linear-gradient(to left,#e3bc79,#f7534b);
+	margin-top:5px;
+	position:relative;
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns:1fr 1fr;
+
+}
+
+.boxes
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.boxes li
+{
+	position:absolute;
+	display:block;
+	list-style:none;
+	width:25px;
+	height:25px;
+	background:white;
+	opacity:0.2;
+	animation:animate 20s linear infinite;
+	bottom:-20px;
+}
+
+.boxes li:nth-child(1)
+{
+	left:85%;
+	width:80px;
+	height:80px;
+	animation-delay:0s;
+}
+.boxes li:nth-child(2)
+{
+	left:20%;
+	width:35px;
+	height:35px;
+	animation-delay:1.5s;
+	animation-duration:10s;
+}
+.boxes li:nth-child(3)
+{
+	left:50%;
+	width:40px;
+	height:40px;
+	animation-delay:1s;
+	animation-duration:5.5s;
+}
+.boxes li:nth-child(4 )
+{
+	left:70%;
+	width:100px;
+	height:100px;
+	animation-delay:0s;
+	animation-duration:15s;
+}
+.boxes li:nth-child(5)
+{
+	left:60%;
+	width:60px;
+	height:60px;
+	animation-delay:1.5s;
+	animation-duration:10s;
+}
+.boxes li:nth-child(6)
+{
+	left:35%;
+	width:150px;
+	height:150px;
+	animation-delay:0s;
+	animation-duration:15s;
+}
+.boxes li:nth-child(7)
+{
+	left:20%;
+	width:150px;
+	height:150px;
+	animation-delay:1.4s;
+	animation-duration:10s;
+}
+.boxes li:nth-child(8)
+{
+	left:65%;
+	width:40px;
+	height:40px;
+	animation-delay:0s;
+	animation-duration:5.6s;
+}
+.boxes li:nth-child(9)
+{
+	left:10%;
+	width:40px;
+	height:40px;
+	animation-delay:0s;
+	animation-duration:6s;
+}
+@keyframes animate
+{
+	0%
+	{
+		transform:translateY(0) rotate(0deg);
+		opacity:0.4;
+	}
+	100%
+	{
+		transform:translateY(-1000px) rotate(360deg);
+		opacity:0.2;
+	}
+}
+/*yoga-types*/
+
+.classes
+{
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns:1fr 1fr;
+}
+.power-pose
+{
+	cursor:pointer;
+	position:relative;
+}
+.power-pose:hover .pic1-detail
+{
+	 width:680px;
+}
+.pic1-detail
+{
+	width:0px;
+	height:383px;
+	background:#e97e7a;
+	position:absolute;
+	top:0;
+	opacity:0.71;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+	transition:0.7s ease;
+}
+
+.vinyasa-pose
+{
+	cursor:pointer;
+	position:relative;
+}
+.pic2-detail
+{
+	width:0px;
+	height:383px;
+	background:#e9cf7a;
+	position:absolute;
+	top:0;
+	opacity:0.71;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+	position:absolute;
+	transition:0.7s ease;
+}
+.vinyasa-pose:hover .pic2-detail
+{
+	 width:680px;
+}
+
+.hatha-pose
+{
+	cursor:pointer;
+	position:relative;
+}
+.pic3-detail
+{
+	width:0px;
+	height:383px;
+	background:#68eb54;
+	position:absolute;
+	top:0;
+	opacity:0.71;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+	position:absolute;
+	transition:0.7s ease;
+}
+.hatha-pose:hover .pic3-detail
+{
+	 width:680px;
+}
+
+.restorative-pose
+{
+	cursor:pointer;
+	position:relative;
+}
+.pic4-detail
+{
+	width:0px;
+	height:383px;
+	background:#c383a6;
+	position:absolute;
+	top:0;
+	opacity:0.71;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+	position:absolute;
+	transition:0.7s ease;
+}
+.restorative-pose:hover .pic4-detail
+{
+	 width:680px;
+}
+
+

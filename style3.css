@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+  }
+  
+  .img-1, .img-2, .img-3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .img-1 {
+    background-image: url("thumb-1920-523923.jpg");
+    min-height: 100%;
+    width: 100%;
+  }
+  
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+  
+  .caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+  
+  .img-2 {
+    background-image: url("yoga-training-gym-pose-woman.jpg");
+    min-height: 400px;
+    width: 100%;
+  }
+  
+  .img-3 {
+    background-image: url("Wallpaper yoga, girl, weight loss, beach, sand, sun, relax, Fitness, Sport 331607097.jpg");
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .description-1{
+    background-color:grey;
+    width: 100%;
+    text-align: center;
+    color: aqua;
+    padding: 18px;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+  }
